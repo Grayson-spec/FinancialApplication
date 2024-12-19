@@ -1,0 +1,28 @@
+/* dashboard.component.css */
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 20px;
+    grid-template-rows: auto;
+}
+  
+  .card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h2 {
+    margin-top: 0;
+  }
+  
+  /* Make the first card span two columns */
+  .card:nth-child(1) {
+    grid-column: 1 / 3;
+  }
+  
+  

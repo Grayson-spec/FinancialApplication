@@ -1,1 +1,42 @@
-<p>vendor works!</p>
+<div class="vendors-container">
+    <h1 class="title">Vendors</h1>
+    <div class="vendor-filter">
+      <form>
+        <div class="form-group">
+          <label for="vendor-name">Vendor Name:</label>
+          <input type="text" id="vendor-name" name="vendor-name">
+        </div>
+        <div class="form-group">
+          <label for="vendor-type">Vendor Type:</label>
+          <select id="vendor-type" name="vendor-type">
+            <option value="">All</option>
+            <option value="supplier">Supplier</option>
+            <option value="contractor">Contractor</option>
+          </select>
+        </div>
+        <button type="submit" class="submit-button">Filter</button>
+      </form>
+    </div>
+    <div class="vendor-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Vendor ID</th>
+            <th>Vendor Name</th>
+            <th>Vendor Type</th>
+            <th>Contact Person</th>
+            <th>Contact Email</th>
+          </tr>
+        </thead>
+        <tbody id="vendor-table-body">
+          <!-- table rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <div class="vendor-details">
+      <h2>Vendor Details</h2>
+      <div id="vendor-details-container">
+        <!-- vendor details will be dynamically displayed here -->
+      </div>
+    </div>
+  </div>

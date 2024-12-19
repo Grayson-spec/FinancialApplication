@@ -1,1 +1,37 @@
-<p>transaction works!</p>
+<div class="transaction-container">
+    <h1 class="title">Transactions</h1>
+    <div class="transaction-filter">
+      <form>
+        <div class="form-group">
+          <label for="transaction-type">Transaction Type:</label>
+          <select id="transaction-type" name="transaction-type">
+            <option value="">All</option>
+            <option value="deposit">Deposit</option>
+            <option value="withdrawal">Withdrawal</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="date-range">Date Range:</label>
+          <input type="date" id="start-date" name="start-date">
+          <input type="date" id="end-date" name="end-date">
+        </div>
+        <button type="submit" class="submit-button">Filter</button>
+      </form>
+    </div>
+    <div class="transaction-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Transaction ID</th>
+            <th>Transaction Type</th>
+            <th>Date</th>
+            <th>Amount</th>
+            <th>Balance</th>
+          </tr>
+        </thead>
+        <tbody id="transaction-table-body">
+          <!-- table rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+  </div>

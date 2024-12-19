@@ -1,1 +1,37 @@
-<p>customer works!</p>
+<div class="customers-container">
+    <h1 class="title">Customers</h1>
+    <div class="customer-filter">
+      <form>
+        <div class="form-group">
+          <label for="customer-name">Customer Name:</label>
+          <input type="text" id="customer-name" name="customer-name">
+        </div>
+        <div class="form-group">
+          <label for="customer-email">Customer Email:</label>
+          <input type="email" id="customer-email" name="customer-email">
+        </div>
+        <button type="submit" class="submit-button">Filter</button>
+      </form>
+    </div>
+    <div class="customer-table">
+      <table>
+        <thead>
+          <tr>
+            <th>Customer ID</th>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Email</th>
+          </tr>
+        </thead>
+        <tbody id="customer-table-body">
+          <!-- table rows will be dynamically added here -->
+        </tbody>
+      </table>
+    </div>
+    <div class="customer-details">
+      <h2>Customer Details</h2>
+      <div id="customer-details-container">
+        <!-- customer details will be dynamically displayed here -->
+      </div>
+    </div>
+  </div>

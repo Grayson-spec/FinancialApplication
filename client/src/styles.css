@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+html {
+    background: linear-gradient(to top, #808080, #D3D3D3 50%, #FFFFFF 100%);
+
+}
+.toggle-btn {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 1.5em;
+    cursor: pointer;
+}

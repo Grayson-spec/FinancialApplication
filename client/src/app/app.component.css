@@ -1,0 +1,119 @@
+/* styles.css */
+
+/* Global Styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9;
+  }
+  
+  /* Header Styles */
+  
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* Container Element Styles */
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    padding-top: 60px; /* Adjust this value to match the height of the header */
+    min-height: 100vh;
+}
+  
+  /* Sidebar Styles */
+  
+  .sidebar {
+    width: 400px;
+    background-color: #333;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: red;
+    padding: 0;
+    overflow-y: auto;
+    transition: width 0.5s, padding 0.5s;
+  }
+  
+  .sidebar.hidden {
+    width: 0;
+    padding: 0;
+    overflow: hidden;
+    visibility: hidden;
+  }
+
+  .sidebar ul {
+    width: 100%;
+    background-color: #333;
+    list-style: none;
+    padding: 0em;
+    box-sizing: border-box;
+  }
+  .sidebar li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.5em;
+    border: 1px solid #333;
+    padding: 0.5em;
+    width: 100%;
+    
+  }
+  .sidebar a {
+    display: flex;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    font-size: 18px;
+    
+  }
+  
+  /* Main Content Styles */
+  
+  .main-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1em;
+    margin-left: auto;
+  }
+  
+  /* Navbar Styles */
+  
+  .navbar {
+    display: flex;
+    justify-content: flex-start;
+  }
+  
+  /* Toggle Button Styles */
+  
+  .toggle-button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    padding: 0.5em 1em;
+    font-size: 2em;
+    cursor: pointer;
+  }
+  
+  .toggle-button:hover {
+    background-color: #444;
+  }

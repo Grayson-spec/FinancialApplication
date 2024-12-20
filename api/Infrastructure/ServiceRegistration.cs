@@ -1,8 +1,9 @@
 using api.Repositories.Interfaces;
 using API.Repositories;
 using API.Services;
-using API.Services.Interfaces;
+using api.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
+using api.Services;
 
 namespace api.Infrastructure
 {

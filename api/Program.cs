@@ -2,9 +2,9 @@ using api;
 using api.Data;
 using api.Infrastructure;
 using api.Repositories.Interfaces;
-using API.Repositories;
-using API.Services;
-using API.Services.Interfaces;
+using api.Repositories;
+using api.Services;
+using api.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +23,11 @@ builder.Services.RegisterServices();
 builder.Services.AddControllers();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("PostgresConnection")));
-
+builder.Services.AddLogging(logging =>
+{
+    logging.AddConsole();
+    logging.AddDebug();
+});
 var app = builder.Build();
 
 app.UseCors();

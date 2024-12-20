@@ -1,7 +1,8 @@
 using api.Models;
+using API.Services;
 using AccountModel = api.Models.Account;
 
-namespace API.Services.Interfaces
+namespace api.Services.Interfaces
 {
     public interface IAccountService
     {

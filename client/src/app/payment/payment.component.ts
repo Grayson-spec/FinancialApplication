@@ -27,7 +27,7 @@ export class PaymentComponent {
   }
 
   getPayments() {
-    this.http.get<Payment[]>('http://localhost:5235/api/payment')
+    this.http.get<Payment[]>('http://localhost:5083/api/payment')
     .subscribe(response => {
       this.payments = response;
       const tableBody = document.getElementById('payment-history-table');

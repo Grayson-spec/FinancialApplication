@@ -26,7 +26,7 @@ export class CustomerComponent {
   }
 
   getCustomers() {
-    this.http.get<Customer[]>('http://localhost:5235/api/customer')
+    this.http.get<Customer[]>('http://localhost:5083/api/customer')
     .subscribe(response => {
       this.customers = response;
       const tableBody = document.getElementById('customer-table-body');

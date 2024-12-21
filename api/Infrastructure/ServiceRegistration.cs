@@ -13,7 +13,8 @@ namespace api.Infrastructure
         {
             services.AddTransient<IAccountRepository, AccountRepository>();
             services.AddTransient<IAccountService, AccountService>();
-
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<ICustomerService, CustomerService>();
             // Add more registrations here...
         }
     }

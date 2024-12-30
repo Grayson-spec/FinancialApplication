@@ -4,6 +4,7 @@ using API.Services;
 using api.Services.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 using api.Services;
+using api.Models;
 
 namespace api.Infrastructure
 {
@@ -15,6 +16,8 @@ namespace api.Infrastructure
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IInvoiceRepository, InvoiceRepository>();
+            services.AddTransient<IInvoiceService, InvoiceService>();
             // Add more registrations here...
         }
     }

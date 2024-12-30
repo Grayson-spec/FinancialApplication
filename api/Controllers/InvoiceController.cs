@@ -1,63 +1,51 @@
 using Microsoft.AspNetCore.Mvc;
 using api.Models;
 using Microsoft.EntityFrameworkCore;
+using api.Repositories.Interfaces;
 
 namespace api.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class InvoiceController : ControllerBase
+    public class InvoiceController(IInvoiceRepository invoiceService) : ControllerBase
     {
-        private readonly DbContext _context;
-
-        public InvoiceController(DbContext context)
-        {
-            _context = context;
-        }
+        private readonly IInvoiceRepository _invoiceService = invoiceService;
+        
 
         // GET: api/Invoice
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Invoice>>> GetInvoices()
         {
-            return await _context.Set<Invoice>().ToListAsync();
+            var invoices = await _invoiceService.GetAllInvoicesAsync();
+            return Ok(invoices);
         }
 
         // GET: api/Invoice/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Invoice>> GetInvoice(int id)
         {
-            var invoice = await _context.Set<Invoice>().FindAsync(id);
+            var invoice = await _invoiceService.GetInvoiceAsync(id);
 
             if (invoice == null)
             {
                 return NotFound();
             }
 
-            return invoice;
+            return Ok(invoice);
         }
 
         // POST: api/Invoice
         [HttpPost]
         public async Task<ActionResult<Invoice>> CreateInvoice(Invoice invoice)
         {
-            _context.Set<Invoice>().Add(invoice);
-            await _context.SaveChangesAsync();
-
-            return CreatedAtAction(nameof(GetInvoice), new { id = invoice.Id }, invoice);
+            return await _invoiceService.CreateInvoiceAsync(invoice);
         }
 
         // PUT: api/Invoice/5
         [HttpPut("{id}")]
         public async Task<ActionResult> UpdateInvoice(int id, Invoice invoice)
         {
-            if (id != invoice.Id)
-            {
-                return BadRequest();
-            }
-
-            _context.Entry(invoice).State = EntityState.Modified;
-            await _context.SaveChangesAsync();
-
+            await _invoiceService.UpdateInvoiceAsync(invoice);
             return NoContent();
         }
 
@@ -65,16 +53,7 @@ namespace api.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult> DeleteInvoice(int id)
         {
-            var invoice = await _context.Set<Invoice>().FindAsync(id);
-
-            if (invoice == null)
-            {
-                return NotFound();
-            }
-
-            _context.Set<Invoice>().Remove(invoice);
-            await _context.SaveChangesAsync();
-
+            await _invoiceService.DeleteInvoiceAsync(id);
             return NoContent();
         }
     }

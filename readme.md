@@ -1,9 +1,9 @@
 Project Name: Financial Application
 ====================================
 Description: This project creates an environment in which a person can manage the finances of a personal or small business. This utilizes .Net Core, Entity Framework Core, Angular Typescript, and PostgreSQL with a monolithic architecture. This project was created with the goal of learning full stack development as thoroughly as possible with an emphasis on learning the architecture of apps, how data passes through them, and how they scale. This project is continuously updated and improved.
----------------
+------------------
 Installation
------------------
+------------------
 Provide installation instructions.
 
 Prerequisites

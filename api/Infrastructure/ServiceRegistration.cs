@@ -18,6 +18,8 @@ namespace api.Infrastructure
             services.AddTransient<ICustomerService, CustomerService>();
             services.AddTransient<IInvoiceRepository, InvoiceRepository>();
             services.AddTransient<IInvoiceService, InvoiceService>();
+            services.AddTransient<IItemRepository, ItemRepository>();
+            services.AddTransient<IItemService, ItemService>();
             // Add more registrations here...
         }
     }
